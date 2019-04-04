@@ -9,11 +9,16 @@ Customer::Customer(){
   	setAccess("1");
 }
 
+void Customer::setBalance(double b){
+	balance = b;
+}
+
 void Customer::print(){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"
 		<< "ID: "<< id<< "\n"
 		<< "Password "<< PWD<< "\n"
-		<< "Access Type"<< access<< endl; 
+		<< "Access Type"<< access<< "\n"
+		<< "Balance: "<< balance<< endl; 
 }
