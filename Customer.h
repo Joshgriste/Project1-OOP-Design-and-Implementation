@@ -15,6 +15,8 @@ class Customer: public User{
 		void print();
 	private:
 		double balance;
+		string dob;
+		string acct;
 };
 #endif
 	
