@@ -7,8 +7,7 @@ using namespace std;
 
 class Admin: public User{
 	public:
-		
-		
+		void print();
 };
 #endif
 	
