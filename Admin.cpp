@@ -2,11 +2,11 @@
 #include "Admin.h"
 
 User::User(){
-  setName("John", "Doe");
+  	setName("John", "Doe");
 	setUName("Admin");
 	setPWD("Administrator");
 	setID("0000000");
-  setAccess("Audit");
+  	setAccess("3");
 }
 
 void Admin::print(){
