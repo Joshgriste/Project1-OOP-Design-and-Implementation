@@ -5,7 +5,7 @@ using namespace std;
 #ifndef ADMIN_H
 #define ADMIN_H
 
-class Customer: public ADMIN{
+class Admin: public User{
 	public:
 		
 		
