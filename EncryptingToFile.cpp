@@ -50,6 +50,19 @@ void toLoginLog(string username, string password, string authlevel)
 	
 }
 
+//function that will log transactions
+void toTransactionLog(string username, string id, string accountType, string transactionType, string oldBalance, string math, string newBalance)
+{
+	string toLog;
+	ofstream TransactionLog;
+	TransactionLog.open("TransactionLog.txt", fstream::app);
+	toLog = Encrypt(username+" "+id+" "+accountType+" "+transactionType+" "+oldBalance+" "+math+" "+newBalance);
+	TransactionLog << toLog << "\n";
+	
+	TransactionLog.close();
+	
+}
+
 //Just used to test the above functions
 int main()
 {
