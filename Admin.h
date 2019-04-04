@@ -1,5 +1,6 @@
 //Admin.h
 #include <iostream>
+#include "User.h"
 using namespace std;
 
 #ifndef ADMIN_H
