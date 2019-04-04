@@ -29,12 +29,25 @@ string Decrypt(string toDecrypt)
 void toCustomers(string first, string last, string id, string dob)
 {
 	string toLog;
-	ofstream log;
-	log.open("CusomerInfo.txt", fstream::app);
+	ofstream CustomerLog;
+	CustomerLog.open("CusomerInfo.txt", fstream::app);
 	toLog = Encrypt(first+" "+last+" "+id+" "+dob);
-	log << toLog << "\n";
+	CustomerLog << toLog << "\n";
 	
-	log.close();
+	CustomerLog.close();
+}
+
+//function that will take username, password, and authlevel and add to log file
+void toLoginLog(string username, string password, string authlevel)
+{
+	string toLog;
+	ofstream LoginLog;
+	LoginLog.open("LoginLog.txt", fstream::app);
+	toLog = Encrypt(username+" "+password+" "+authlevel);
+	LoginLog << toLog << "\n";
+	
+	LoginLog.close();
+	
 }
 
 //Just used to test the above functions
