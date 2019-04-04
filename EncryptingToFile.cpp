@@ -30,7 +30,7 @@ void toCustomers(string first, string last, string id, string dob)
 {
 	string toLog;
 	ofstream CustomerLog;
-	CustomerLog.open("CusomerInfo.txt", fstream::app);
+	CustomerLog.open("CustomerInfo.txt", fstream::app);
 	toLog = Encrypt(first+" "+last+" "+id+" "+dob);
 	CustomerLog << toLog << "\n";
 	
@@ -38,15 +38,15 @@ void toCustomers(string first, string last, string id, string dob)
 }
 
 //function that will take username, password, and authlevel and add to log file
-void toLoginLog(string username, string password, string authlevel)
+void toAccountLog(string username, string password, string authlevel)
 {
 	string toLog;
-	ofstream LoginLog;
-	LoginLog.open("LoginLog.txt", fstream::app);
+	ofstream AccountLog;
+	AccountLog.open("AccountLog.txt", fstream::app);
 	toLog = Encrypt(username+" "+password+" "+authlevel);
-	LoginLog << toLog << "\n";
+	AccountLog << toLog << "\n";
 	
-	LoginLog.close();
+	AccountLog.close();
 	
 }
 
@@ -61,6 +61,19 @@ void toTransactionLog(string username, string id, string accountType, string tra
 	
 	TransactionLog.close();
 	
+}
+
+//function that will log all sucessful and unsucessful login attempts
+void toLoginLog(string username, string password)
+{
+	string toLog;
+	string time;
+	ofstream LoginLog;
+	LoginLog.open("LoginLog.txt", fstream::app);
+	toLog = Encrypt(username + " " + password + " " + time);
+	LoginLog << toLog << "\n";
+	
+	LoginLog.close();
 }
 
 //Just used to test the above functions
