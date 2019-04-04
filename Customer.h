@@ -9,7 +9,9 @@ using namespace std;
 class Customer: public User{
 	public:
 		Customer();
-		setBalance(double);
+		void setBalance(double);
+		void setDOB(string);
+		void setAcctType(string);
 		void print();
 	private:
 		double balance;
