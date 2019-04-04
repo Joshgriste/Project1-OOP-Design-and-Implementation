@@ -1,5 +1,6 @@
 //Banker.h
 #include <iostream>
+#include "User.h"
 using namespace std;
 
 #ifndef BANKER_H
@@ -7,8 +8,8 @@ using namespace std;
 
 class Banker: public User{
 	public:
-		
-		
+		Banker();
+		void print();
 };
 #endif
 	

@@ -3,15 +3,15 @@
 #include "User.h"
 
 User::User(){
-  setName("John", "Doe");
+  	setName("John", "Doe");
 	setUName("Default");
 	setPWD("Passwd");
 	setID("0000000");
-  setAccess("ATM");
+  	setAccess("1");
 }
 void User::setName(string f, string l){
-  first = f;
-  last = l;
+  	first = f;
+ 	 last = l;
 }
 void User::setUName(string u){
 	UName = r;
@@ -25,7 +25,7 @@ void User::setID(string i){
 	id = i;
 }
 void User::setAccess(string a){
-  Access = a; 
+  	Access = a; 
 }
 void User::print(){
 	cout<< "User Information\n"
