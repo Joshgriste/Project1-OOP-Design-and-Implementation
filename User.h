@@ -28,6 +28,7 @@ class User{
 		string id;
 		string UName;
 		string PWD;
+		string Access;
 		
 };
 
