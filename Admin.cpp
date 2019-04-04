@@ -1,7 +1,7 @@
 //Admin.cpp
 #include "Admin.h"
 
-User::User(){
+Admin::Admin(){
   	setName("John", "Doe");
 	setUName("Admin");
 	setPWD("Administrator");
