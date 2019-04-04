@@ -1,0 +1,41 @@
+# Project: BankingApplication
+# Makefile created by Dev-C++ 5.4.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = User.o Customer.o Banker.o Admin.o main.o $(RES)
+LINKOBJ  = User.o Customer.o Banker.o Admin.o main.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = BankingApplication.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+User.o: User.cpp
+	$(CPP) -c User.cpp -o User.o $(CXXFLAGS)
+
+Customer.o: Customer.cpp
+	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
+
+Banker.o: Banker.cpp
+	$(CPP) -c Banker.cpp -o Banker.o $(CXXFLAGS)
+
+Admin.o: Admin.cpp
+	$(CPP) -c Admin.cpp -o Admin.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
