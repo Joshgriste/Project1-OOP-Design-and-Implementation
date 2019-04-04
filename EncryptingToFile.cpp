@@ -3,6 +3,7 @@
 #include<fstream>
 using namespace std;
 
+//Function that takes a string and returns an encrypted string
 string Encrypt(string toEncrypt) 
 {
 	char key = 'J';
@@ -13,6 +14,7 @@ string Encrypt(string toEncrypt)
 	return encrypted;
 }
 
+//Function that will take an encrypted string and decrypt it (returns as a string)
 string Decrypt(string toDecrypt)
 {
 	char key = 'J';
@@ -23,6 +25,7 @@ string Decrypt(string toDecrypt)
 	return decrypted;
 }
 
+//Function that will take customer variables, encrypt it using encrypt function, and write to "CustomerInfo.txt"
 void toCustomers(string first, string last, string id, string dob)
 {
 	string toLog;
@@ -34,6 +37,7 @@ void toCustomers(string first, string last, string id, string dob)
 	log.close();
 }
 
+//Just used to test the above functions
 int main()
 {
 	string first, last, dob, id, accountType;
