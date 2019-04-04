@@ -9,8 +9,10 @@ using namespace std;
 class Customer: public User{
 	public:
 		Customer();
-		void print;
-		
+		setBalance(double);
+		void print();
+	private:
+		double balance;
 };
 #endif
 	
