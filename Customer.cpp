@@ -12,13 +12,19 @@ Customer::Customer(){
 void Customer::setBalance(double b){
 	balance = b;
 }
-
+void Customer::setDOB(string d){
+	dob = d;
+}
+void Custormer::setAcctType(string at){
+	acct = at;
+}
 void Customer::print(){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"
-		<< "ID: "<< id<< "\n"
-		<< "Password "<< PWD<< "\n"
-		<< "Access Type"<< access<< "\n"
+		<< "ID: "<< at<< " "<< id<< "\n"
+		<< "Password: "<< PWD<< "\n"
+		<< "Date of Birth: "<< dob<< "\n"
+		<< "Access Type: "<< access<< "\n"
 		<< "Balance: "<< balance<< endl; 
 }
