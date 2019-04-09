@@ -33,7 +33,7 @@ void toCustomers(string first, string last, string id, string dob)
 	CustomerLog.open("CustomerInfo.txt", fstream::app);
 	toLog = Encrypt(first) + Encrypt(" ") + Encrypt(last) + Encrypt(" ") + Encrypt(id) + Encrypt(" ") + Encrypt(dob);
 	CustomerLog << toLog << "\n";
-	CustomerLog << Decrypt(toLog) << "\n";
+	
 	
 	CustomerLog.close();
 }
@@ -46,7 +46,7 @@ void toAccountLog(string username, string password, string authlevel)
 	AccountLog.open("AccountLog.txt", fstream::app);
 	toLog = Encrypt(username) + Encrypt(" ")+ Encrypt(password)+Encrypt(" ")+Encrypt(authlevel);
 	AccountLog << toLog << "\n";
-	AccountLog << Decrypt(toLog) << "\n";
+
 	
 	AccountLog.close();
 	
