@@ -25,7 +25,7 @@ void User::setID(string i){
 	id = i;
 }
 void User::setAccess(string a){
-  	Access = a; 
+  	access = a; 
 }
 void User::print(){
 	cout<< "User Information\n"
