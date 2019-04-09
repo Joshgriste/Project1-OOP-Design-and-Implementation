@@ -6,7 +6,7 @@ using namespace std;
 //Function that takes a string and returns an encrypted string
 string Encrypt(string toEncrypt) 
 {
-	char key = 'J';
+	char key = 'j';
 	string encrypted = toEncrypt;
 	for (int i = 0; i < toEncrypt.size(); i++)
         encrypted[i] = toEncrypt[i] ^ key;
@@ -17,7 +17,7 @@ string Encrypt(string toEncrypt)
 //Function that will take an encrypted string and decrypt it (returns as a string)
 string Decrypt(string toDecrypt)
 {
-	char key = 'J';
+	char key = 'j';
 	string decrypted = toDecrypt;
 	for (int i = 0; i < toDecrypt.size(); i++)
 		decrypted[i] = toDecrypt[i] ^ key;
@@ -31,8 +31,9 @@ void toCustomers(string first, string last, string id, string dob)
 	string toLog;
 	ofstream CustomerLog;
 	CustomerLog.open("CustomerInfo.txt", fstream::app);
-	toLog = Encrypt(first+" "+last+" "+id+" "+dob);
+	toLog = Encrypt(first) + Encrypt(" ") + Encrypt(last) + Encrypt(" ") + Encrypt(id) + Encrypt(" ") + Encrypt(dob);
 	CustomerLog << toLog << "\n";
+	CustomerLog << Decrypt(toLog) << "\n";
 	
 	CustomerLog.close();
 }
@@ -43,8 +44,9 @@ void toAccountLog(string username, string password, string authlevel)
 	string toLog;
 	ofstream AccountLog;
 	AccountLog.open("AccountLog.txt", fstream::app);
-	toLog = Encrypt(username+" "+password+" "+authlevel);
+	toLog = Encrypt(username) + Encrypt(" ")+ Encrypt(password)+Encrypt(" ")+Encrypt(authlevel);
 	AccountLog << toLog << "\n";
+	AccountLog << Decrypt(toLog) << "\n";
 	
 	AccountLog.close();
 	
@@ -56,7 +58,7 @@ void toTransactionLog(string username, string id, string accountType, string tra
 	string toLog;
 	ofstream TransactionLog;
 	TransactionLog.open("TransactionLog.txt", fstream::app);
-	toLog = Encrypt(username+" "+id+" "+accountType+" "+transactionType+" "+oldBalance+" "+math+" "+newBalance);
+	toLog = Encrypt(username)+Encrypt(" ")+Encrypt(id)+Encrypt(" ")+Encrypt(accountType)+Encrypt(" ")+Encrypt(transactionType)+Encrypt(" ")+Encrypt(oldBalance)+Encrypt(" ")+math+Encrypt(" ")+newBalance;
 	TransactionLog << toLog << "\n";
 	
 	TransactionLog.close();
@@ -70,7 +72,7 @@ void toLoginLog(string username, string password)
 	string time;
 	ofstream LoginLog;
 	LoginLog.open("LoginLog.txt", fstream::app);
-	toLog = Encrypt(username + " " + password + " " + time);
+	toLog = Encrypt(username) +Encrypt(" ")+ Encrypt(password) + Encrypt(" ")+ Encrypt(time);
 	LoginLog << toLog << "\n";
 	
 	LoginLog.close();
@@ -80,13 +82,20 @@ void toLoginLog(string username, string password)
 int main()
 {
 	string first, last, dob, id, accountType;
+	string username, password, auth;
 	string encrypt;
 	string decrypt;
 	char key = 'J';
 
-	first = "This is a test!";
-	last = "This is a test too!";
+	first = "Admin";
+	last = "Test";
+	id = "102";
+	dob = "5/08/1999";
 	toCustomers(first,last,id,dob);
+	username = "Admin";
+	password = "pass";
+	auth = "1";
+	toAccountLog(username, password, auth);
 
 	system("Pause");
 	return 0;
