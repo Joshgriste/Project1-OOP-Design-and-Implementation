@@ -10,6 +10,7 @@ class Banker: public User{
 	public:
 		Banker();
 		void print();
+		void displayMenu();
 };
 #endif
 	
