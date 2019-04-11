@@ -15,14 +15,14 @@ void Customer::setBalance(double b){
 void Customer::setDOB(string d){
 	dob = d;
 }
-void Custormer::setAcctType(string at){
-	acct = at;
+void Customer::setAcctType(string a){
+	acct = a;
 }
 void Customer::print(){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"
-		<< "ID: "<< at<< " "<< id<< "\n"
+		<< "ID: "<< a<< " "<< id<< "\n"
 		<< "Password: "<< PWD<< "\n"
 		<< "Date of Birth: "<< dob<< "\n"
 		<< "Access Type: "<< access<< "\n"

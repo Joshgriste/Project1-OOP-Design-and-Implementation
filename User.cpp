@@ -14,7 +14,7 @@ void User::setName(string f, string l){
  	 last = l;
 }
 void User::setUName(string u){
-	UName = r;
+	UName = u;
 }
 
 void User::setPWD(string p){
