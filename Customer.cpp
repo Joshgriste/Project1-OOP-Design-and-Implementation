@@ -3,10 +3,11 @@
 
 Customer::Customer(){
   	setName("John", "Doe");
-  	setUName("Teller");
-  	setPWD("Teller");
+  	setUName("Customer");
+  	setPWD("Customer");
   	setID("0000000");
   	setAccess("1");
+	setDOB("null");
 }
 
 void Customer::setBalance(double b){
