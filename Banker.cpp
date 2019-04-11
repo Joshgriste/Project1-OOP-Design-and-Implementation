@@ -19,12 +19,9 @@ void Banker::print(){
 }
 
 void Banker::displayMenu()
-{
-	int userAuth;
-	if(userAuth == 2)
-	{
-		
-		int choice;	
+{	
+	int choice = 0;
+	while (choice !=3) {
 		cout<<"Banker Menu\n"
 		<<"1.Enter a new client\n"
 		<<"2.Modify an existing client\n"
