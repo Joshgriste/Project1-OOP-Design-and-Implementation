@@ -2,6 +2,9 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <string>
+#include "Banker.h"
+#include "Customer.h"
+#include "Admin.h"
 
 using namespace std;
 
@@ -10,9 +13,12 @@ using namespace std;
 string Decrypt(string usernameinput, string passinput)
 {
 	char key = 'J'; //XOR key encryption
-	ifstream is("CustomerInfo.txt"); //opens file
+	ifstream is("AccountLog.txt"); //opens file
     string str = "Placeholder";
     string decrypted;
+    Banker bank;
+    Customer cust;
+    Admin adm;
     
     int i =0;
        if(!is.is_open()) { //error if file fails to open
@@ -37,12 +43,15 @@ string Decrypt(string usernameinput, string passinput)
 				switch(auth){ //switch based on ID
 					case 1:
 						cout << "user menu goes here";
+						return "Done";
 						break;
 					case 2:
-						cout << "banker menu goes here";
+						bank.displayMenu();
+						return "Done";
 						break;
 					case 3:
 						cout << "admin menu goes here";
+						return "Done";
 						break;
 				}
 			}
