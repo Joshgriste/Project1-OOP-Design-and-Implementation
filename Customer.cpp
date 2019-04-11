@@ -23,7 +23,7 @@ void Customer::print(){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"
-		<< "ID: "<< a<< " "<< id<< "\n"
+		<< "ID: "<< acct<< " "<< id<< "\n"
 		<< "Password: "<< PWD<< "\n"
 		<< "Date of Birth: "<< dob<< "\n"
 		<< "Access Type: "<< access<< "\n"
