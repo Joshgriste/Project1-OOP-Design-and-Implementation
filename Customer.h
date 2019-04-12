@@ -12,7 +12,11 @@ class Customer: public User{
 		void setBalance(double);
 		void setDOB(string);
 		void setAcctType(string);
-		void print();
+		void withdraw();
+		void deposit();
+		void menu();
+		void viewbal();
+		void print(string a);
 	private:
 		double balance;
 		string dob;
