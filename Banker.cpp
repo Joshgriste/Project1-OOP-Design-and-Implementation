@@ -18,15 +18,15 @@ void Banker::print(){
 		<< "Access Type"<< access<< endl; 
 }
 
-void Banker::displayMenu()
+int Banker::displayMenu()
 {	
 	int choice = 0;
-	while (choice !=3) {
 		cout<<"Banker Menu\n"
 		<<"1.Enter a new client\n"
 		<<"2.Modify an existing client\n"
 		<<"3.Exit\n"
 		<<"Enter your choice: ";
 		cin >>choice;
-	}
+		return choice;
+	
 }
