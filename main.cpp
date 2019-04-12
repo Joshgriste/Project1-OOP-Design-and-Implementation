@@ -12,6 +12,7 @@ using namespace std;
 //Function that will take an encrypted string and decrypt it (returns as a string)
 string Decrypt(string usernameinput, string passinput)
 {
+	Customer myCus[100];
 	char key = 'J'; //XOR key encryption
 	ifstream is("AccountLog.txt"); //opens file
     string str = "Placeholder";
@@ -47,6 +48,17 @@ string Decrypt(string usernameinput, string passinput)
 						break;
 					case 2:
 						bank.displayMenu();
+							Switch(choice){
+								case 1:
+									newClient(myCus[]);
+									break;
+								case 2:
+									editClient(myCus[]);
+									break;
+								case 3:
+									cout<< "Bye!"<< endl;
+									break;
+							}
 						return "Done";
 						break;
 					case 3:
