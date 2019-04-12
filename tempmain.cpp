@@ -74,10 +74,7 @@ int main()
 	userauth = verifylogin(); //grabs user info
 	}*/
 	int choice;
-	int selection;
-	do//the menu to access the others. Once this works, we should be able to incorporate the login
 	{
-		switch(choice)
 		{
 		cout<<"Welcome to the banking system!\n"
 			<<"What will you be logging in as: \n"
@@ -87,44 +84,97 @@ int main()
 			<<"4. Exit\n"
 			<<"Enter your choice: ";
 		cin >>choice;
-		
-		system("PAUSE");
-	
-	case 1:
-	cout<<"Thank you for using the Banking Inc.\n"
-		<<"What would you like to do today?\n";
+			
+	switch(choice)
 	do
 	{
-	switch (selection)
+	
 	{
 		
-		cout<<"1. Withdraw from my account\n"
-			<<"2. Deposit into my account"<<endl;
-			cin>>selection;
-		
-		{
-			
-			
+		case 1:
+			cout<<"Thank you for using the Banking Inc.\n"
+				<<"What would you like to do today?\n"
+				<<"1. Withdraw from my account\n"
+				<<"2. Deposit into my account\n"
+				<<"3. Exit\n"
+				<<"Enter your choice\n";
+			cin >>choice;
+		switch(choice)
 			do
 			{
-				
-				
-				switch(selection)
-				{
-					case 1:
-						cout<<"How much would you like to witdraw?\n";
+					case 1://to withdraw
+						cout<<"How much would you like to withdraw?\n";
 						break;
-					case 2:
+					case 2://to deposit, both options could ask which account
 						cout<<"How much would you like to deposit?\n";
 						break;
-				}while (selection !=2);
-			}while( selection !=2);
+					case 3: 
+						cout<<"Goodbye!\n";
+						break;
+					
+			
+			}while( choice !=3);
+			break;
+		
+		case 2:
+			cout<<"Banker Menu\n"
+				<<"1.Enter a new client\n"
+				<<"2.Modify an existing client\n"
+				<<"3.Exit\n"
+				<<"Enter your choice: ";
+			cin >>choice;
+		switch(choice)
+		do
+		{
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					cout<<"Goodbye!\n";
+					break;
+		}while(choice != 3);	
+		break;
+	
+		case 3:
+		cout<<"Administrator Menu\n"
+			<<"1. Modify a teller's account\n"
+			<<"2. Modify a customer's account\n"
+			<<"3. Exit\n"
+			<<"Enter your choice\n";
+		cin >>choice;
+		switch(choice)
+		do
+		{
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3: 
+					cout<<"Goodbye!\n";
+					break;
+		}while(choice =!3);
+		
+		break;
+			
+		case 4:
+			cout<<"Goodbye!\n";
 			return 0;
+			break;
 			
-			//case 2:
-			}
-			
-		}
-	}while(choice !=4);
 }
 	
+
+
+	
+  }while(choice !=4);
+  system("PAUSE");
+
+ }
+
+}
+}
+
+
+	
+
