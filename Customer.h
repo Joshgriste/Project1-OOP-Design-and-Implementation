@@ -10,6 +10,7 @@ class Customer: public User{
 	public:
 		Customer();
 		void setBalance(double);
+		double getBalance();
 		void setDOB(string);
 		void setAcctType(string);
 		void withdraw();
