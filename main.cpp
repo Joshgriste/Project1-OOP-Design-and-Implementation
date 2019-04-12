@@ -74,8 +74,9 @@ int verifylogin()
 	
 }
 void viewCustomer(Customer[]){
+	string id;
 	cout<< "What is your id number?"<< endl;
-	cin>> id;
+	cin >> id;
 	Customer[id].print();
 }
 
@@ -102,7 +103,7 @@ void newClient(Customer[]){
 	}
 	cout<< "What is the client first and last name?"<< endl;
 	cin>> Customer[i].first>> Customer[i].last;
-	cout<< "What is the client ID number<< endl;
+	cout<< "What is the client ID number" << endl;
 	cin>> Customer[i].id;
 	cout<< "What is the client username?"<< endl;
 	cin>> Customer[i].UName;
@@ -117,7 +118,7 @@ void newClient(Customer[]){
 void editClient(Customer[]){
 	int id;
 	int yn;
-	cout<< "What is the id number of the Customer you would like to edit?"
+	cout<< "What is the id number of the Customer you would like to edit?";
 	cin>> id;
 	cout<< "The client's name is: "<< Customer[id].first<< Customer[id].last<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
