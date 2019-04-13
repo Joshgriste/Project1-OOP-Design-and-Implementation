@@ -12,6 +12,7 @@ class Customer: public User{
 		void setBalance(double);
 		double getBalance();
 		void setDOB(string);
+		string getDOB();
 		void setAcctType(string);
 		void withdraw();
 		void deposit();
