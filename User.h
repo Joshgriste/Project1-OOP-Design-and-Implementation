@@ -19,8 +19,12 @@ class User{
 			ATM - can withdraw money and view account info
 		*/
 		void setAccess(string);
-		string getName();
+		string getFName();
+		string getLName();
 		string getID();
+		string getUName();
+		string getPWD();
+		string getAccess();
 		virtual void print();
 	protected:
 		string first;
