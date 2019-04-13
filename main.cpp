@@ -18,20 +18,24 @@ void viewCustomer(Customer Customer[]){
 }
 
 void withdraw(Customer Customer[]){
-	double amount;
+	double amount, bal;
 	int id;
 	cout<< "What is your id number?"<< endl;
 	cin>> id;
 	cout<< "How much money would you like to withdraw?"<< endl;
 	cin>> amount;
-	Customer[id].getBalance = Customer[id].getBalance - amount;
-	cout<< "Your new balance is: "<< Customer[id].getBalance<< endl;
+	bal = Customer[id].getBalance();
+	bal = bal - amount;
+	Customer[id].setBalance(bal);
+	cout<< "Your new balance is: "<< bal<< endl;
 }
 void newClient(Customer Customer[]){
 	int i = 0;
 	int x = 0;
+	string f, l, id, u, p, d;
 	while(x = 0){
-		if(Customer[i].dob == "null"){
+		d = Customer[i].getDOB();
+		if(d == "null"){
 			x = 1;
 		}else{
 			i++;
@@ -39,51 +43,66 @@ void newClient(Customer Customer[]){
 	
 	}
 	cout<< "What is the client first and last name?"<< endl;
-	cin>> Customer[i].first>> Customer[i].last;
+	cin>> f>> l;
+	Customer[i].setName(f, l);
 	cout<< "What is the client ID number" << endl;
-	cin>> Customer[i].id;
+	cin>> id;
+	Customer[i].setID(id);
 	cout<< "What is the client username?"<< endl;
-	cin>> Customer[i].UName;
+	cin>> u;
+	Customer[i].setUName(u);
 	cout<< "What is the client Password?"<< endl; 
-	cin>> Customer[i].PWD;
+	cin>> p;
+	Customer[i].setPWD(p);
 	cout<< "What is the client date of birth in mm/dd/yyyy format?"<< endl;
-	cin>> Customer[i].dob;
-	Customer[i].access = "1";
-	Customer[i].balance = 0.00;
+	cin>> d;
+	Customer[i].setDOB(d);
+	Customer[i].setAccess("1");
+	Customer[i].setBalance(0.00);
 	cout<< "Customer account created!"<< endl;
 }
 void editClient(Customer Customer[]){
-	int id;
-	int yn;
+	int yn,id;
+	string f, l, i, u, p, d;
 	cout<< "What is the id number of the Customer you would like to edit?";
 	cin>> id;
-	cout<< "The client's name is: "<< Customer[id].first<< Customer[id].last<< endl;
+		f = Customer[id].getFName();
+		l = Customer[id].getLName();
+		i = Customer[id].getID();
+		u = Customer[id].getUName();
+		p = Customer[id].getPWD();
+		d = Customer[id].getDOB();
+	cout<< "The client's name is: "<< f<< l<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
 		cout<< "Enter the new client name."<< endl;
-		cin>> Customer[id].first>> Customer[id].last;
+		cin>> f>> l;
+		Customer[id].setName(f, l);
 	}
-	cout<< "The client's username is "<< Customer[id].UName<< endl;
+	cout<< "The client's username is "<< u<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
 		cout<< "Enter the new client username."<< endl;
-		cin>> Customer[id].UName;
+		cin>> u;
+		Customer[id].setUName(u);
 	}
-	cout<< "The client's password is "<< Customer[id].PWD<< endl;
+	cout<< "The client's password is "<< p<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
 		cout<< "Enter the new client password."<< endl;
-		cin>> Customer[id].PWD;
+		cin>> p;
+		Customer[id].setPWD(p);
 	}
-	cout<< "The client's date of birth is "<< Customer[id].dob<< endl;
+	cout<< "The client's date of birth is "<< d<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
 		cout<< "Enter the new client password."<< endl;
-		cin>> Customer[id].dob;
+		cin>> d;
+		Customer[id].setDOB(d);
 	}
 	
 }
@@ -191,12 +210,10 @@ string Decrypt(string usernameinput, string passinput)
 						while(choice != 3){
 							switch(choice){
 								case 1:
-									newClient(myCus[]);
+									newClient(myCus);
 									break;
 								case 2:
-									cout<< "What is the id for the customer you would like to edit?"<< endl;
-									cin>> custid;
-									editClient(cust[custid]);
+									editClient(myCus);
 									break;
 								case 3:
 									cout<< "Bye!"<< endl;
