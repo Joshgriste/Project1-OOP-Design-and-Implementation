@@ -9,6 +9,7 @@ using namespace std;
 class Admin: public User{
 	public:
 		Admin();
+		void controlMenu();
 		void print();
 };
 #endif

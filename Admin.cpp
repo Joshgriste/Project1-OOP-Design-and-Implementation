@@ -17,3 +17,22 @@ void Admin::print(){
 		<< "Password "<< PWD<< "\n"
 		<< "Access Type"<< access<< endl; 
 }
+
+
+
+void Admin::controlMenu()
+{	
+	int choice;
+		cout<<"Admin Menu\n"
+		<<"1. Enter a new client\n"
+		<<"2. Modify an existing client\n"
+		<<"3. Enter a new employee\n"
+		<<"4. Modify an existing employee\n"
+		<<"5. Exit\n"
+		<<"Enter your choice: ";
+		cin >>choice;
+	
+}
+
+
+
