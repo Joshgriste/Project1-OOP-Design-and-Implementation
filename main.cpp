@@ -2,6 +2,8 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <string>
+#include <ctime>
+#include <fstream>
 #include "Banker.h"
 #include "Customer.h"
 #include "Admin.h"
@@ -231,6 +233,30 @@ string Decrypt(string usernameinput, string passinput)
 		return "not found";
 	}
 }
+
+void toCustomerBalanceLog(string first, string last, string balance)
+{
+	string toLog;
+	string contents, word, filename;
+	fstream file;
+	filename = "CustomerBalanceLog.txt";
+	file.open(filename.cstr());
+	while (file >> word)
+	{
+		contents = contents + "\n" + word;
+	}
+	ofstream CustomerBalanceLog;
+	CustomerBalanceLog.open("CustomerBalanceLog.txt");
+	toLog = first + last + balance;
+	CustomerBalanceLog << toLog;
+	CustomerBalanceLog.close();
+	
+	CustomerBalanceLog.open("CustomerBalanceLog.txt", iot_base::app);
+	CustomerBalanceLog << contents << "\n";
+
+	CustomerBalanceLog.close();
+}
+
 
 int verifylogin()
 { //user enters username and password

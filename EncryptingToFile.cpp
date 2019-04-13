@@ -26,15 +26,26 @@ string Decrypt(string toDecrypt)
 }
 
 //Function that will take customer variables, encrypt it using encrypt function, and write to "CustomerInfo.txt"
-void toCustomers(string first, string last, string id, string dob)
+void toCustomerBalanceLog(string first, string last, string balance)
 {
 	string toLog;
-	ofstream CustomerLog;
-	CustomerLog.open("CustomerInfo.txt", fstream::app);
-	toLog = Encrypt(first) + Encrypt(" ") + Encrypt(last) + Encrypt(" ") + Encrypt(id) + Encrypt(" ") + Encrypt(dob);
-	CustomerLog << toLog << "\n";
+	string contents, word, filename;
+	fstream file;
+	filename = "CustomerBalanceLog.txt";
+	file.open(filename.cstr());
+	wihle (file >> word)
+	{
+		contents = contents + "\n" + word;
+	}
+	ofstream CustomerBalanceLog;
+	CustomerBalanceLog.open("CustomerBalanceLog.txt");
+	toLog = first + last + balance;
+	CustomerBalanceLog << toLog;
+	CustomerBalanceLog.close();
 	
-	
+	CustomerBalanceLog.open("CustomerBalanceLog.txt", iot_base::app);
+	CustomerBalanceLog << contents << "\n";
+
 	CustomerLog.close();
 }
 
