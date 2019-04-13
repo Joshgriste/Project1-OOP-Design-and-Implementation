@@ -1,7 +1,7 @@
 //User.h
 #include <iostream>
 using namespace std;
-
+#include <string>
 #ifndef USER_H
 #define USER_H
 

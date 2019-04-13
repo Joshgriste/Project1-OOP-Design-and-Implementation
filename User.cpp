@@ -27,6 +27,8 @@ void User::setID(string i){
 void User::setAccess(string a){
   	access = a; 
 }
+
+
 void User::print(){
 	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"

@@ -1,5 +1,6 @@
 //Customer.cpp
 #include "Customer.h"
+
 #include <bits/stdc++.h>
 
 Customer::Customer(){
@@ -20,7 +21,9 @@ void Customer::setDOB(string d){
 void Customer::setAcctType(string a){
 	acct = a;
 }
-void Customer::print(){
+
+void Customer::print()
+{
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"

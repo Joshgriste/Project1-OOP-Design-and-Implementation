@@ -67,8 +67,8 @@ void editClient(Customer Customer[]){
 	string f, l, i, u, p, d;
 	cout<< "What is the id number of the Customer you would like to edit?";
 	cin>> id;
-		f = Customer[id].getFName();
-		l = Customer[id].getLName();
+		f,l = Customer[id].getName();
+		
 		i = Customer[id].getID();
 		u = Customer[id].getUName();
 		p = Customer[id].getPWD();
@@ -101,7 +101,7 @@ void editClient(Customer Customer[]){
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
-		cout<< "Enter the new client password."<< endl;
+		cout<< "Enter the new client dob."<< endl;
 		cin>> d;
 		Customer[id].setDOB(d);
 	}
@@ -144,8 +144,7 @@ void editEmployee(Banker Banker[]){
 	string f, l, i, u, p;
 	cout<< "What is the id number of the employee you would like to edit?";
 	cin>> id;
-		f = Banker[id].getFName();
-		l = Banker[id].getLName();
+		f,l = Banker[id].getName();
 		i = Banker[id].getID();
 		u = Banker[id].getUName();
 		p = Banker[id].getPWD();
@@ -277,7 +276,7 @@ void toCustomerBalanceLog(string first, string last, string balance)
 	string contents, word, filename;
 	fstream file;
 	filename = "CustomerBalanceLog.txt";
-	file.open(filename.cstr());
+	file.open(filename.c_str());
 	while (file >> word)
 	{
 		contents = contents + "\n" + word;
@@ -288,7 +287,7 @@ void toCustomerBalanceLog(string first, string last, string balance)
 	CustomerBalanceLog << toLog;
 	CustomerBalanceLog.close();
 	
-	CustomerBalanceLog.open("CustomerBalanceLog.txt", iot_base::app);
+	CustomerBalanceLog.open("CustomerBalanceLog.txt", ios_base::app);
 	CustomerBalanceLog << contents << "\n";
 
 	CustomerBalanceLog.close();
