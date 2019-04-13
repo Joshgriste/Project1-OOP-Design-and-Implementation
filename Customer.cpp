@@ -20,6 +20,12 @@ void Customer::setDOB(string d){
 void Customer::setAcctType(string a){
 	acct = a;
 }
+double Customer::getBalance(){
+	return balance;
+}
+string Customer::getDOB(){
+	return dob;
+}
 void Customer::print(string a){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
