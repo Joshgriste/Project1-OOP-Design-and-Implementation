@@ -12,12 +12,14 @@ class Customer: public User{
 		void setBalance(double);
 		double getBalance();
 		void setDOB(string);
+		string getDOB();
 		void setAcctType(string);
+		string getAcctType();
 		void withdraw();
 		void deposit();
 		void menu();
 		void viewbal();
-		void print(string a);
+		void print();
 	private:
 		double balance;
 		string dob;

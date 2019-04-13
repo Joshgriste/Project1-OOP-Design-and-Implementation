@@ -7,6 +7,7 @@
 #include "Banker.h"
 #include "Customer.h"
 #include "Admin.h"
+#include "User.h"
 
 
 using namespace std;
@@ -110,58 +111,71 @@ void editClient(Customer Customer[]){
 void newEmployee(Banker Banker[]){
 	int i = 0;
 	int x = 0;
+	string f, l, id, u, p, d;
 	while(x = 0){
-		if(Banker[i].dob == "null"){
+		id = Banker[i].getID();
+		if (id == "null")
+		{
 			x = 1;
-		}else{
+		
+		}else
+		{
 			i++;
 		}
 	
 	}
 	cout<< "What is the employee's first and last name?"<< endl;
-	cin>> Customer[i].first>> Customer[i].last;
+	cin>> f>>l; 
+	Banker[i].setName(f,l);
 	cout<< "What is the employee's ID number" << endl;
-	cin>> Customer[i].id;
+	cin>>id; 
+	Banker[i].setID(id);
 	cout<< "What is the employe's username?"<< endl;
-	cin>> Customer[i].UName;
+	cin>>u; 
+	Banker[i].setUName(u);
 	cout<< "What is the employee's Password?"<< endl; 
-	cin>> Customer[i].PWD;
-	cout<< "What is the employee's date of birth in mm/dd/yyyy format?"<< endl;
-	cin>> Customer[i].dob;
+	cin>> p;
+	Banker[i].setPWD(p);
+	Banker[i].setAccess("2");
+	cout<< "Customer account created!"<< endl;
 }
 void editEmployee(Banker Banker[]){
-	int id;
-	int yn;
+	int yn,id;
+	string f, l, i, u, p;
 	cout<< "What is the id number of the employee you would like to edit?";
 	cin>> id;
-	cout<< "The employee's name is: "<< Banker[id].first<< Banker[id].last<< endl;
+		f = Banker[id].getFName();
+		l = Banker[id].getLName();
+		i = Banker[id].getID();
+		u = Banker[id].getUName();
+		p = Banker[id].getPWD();
+		
+	cout<< "The employee's name is: "<<f<<l<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
-	if (yn == 0){
+	if (yn == 0)
+	{
 		cout<< "Enter the new employee name."<< endl;
-		cin>> Banker[id].first>> Banker[id].last;
+		cin>>f>>l;
+		Banker[id].setName(f,l);
 	}
-	cout<< "The employee's username is "<< Banker[id].UName<< endl;
+	cout<< "The employee's username is "<< u<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
-		cout<< "Enter the new client username."<< endl;
-		cin>> Banker[id].UName;
+		cout<< "Enter the new employee username."<< endl;
+		cin>> u;
+	Banker[id].setUName(u);
 	}
-	cout<< "The client's password is "<< Customer[id].PWD<< endl;
+	cout<< "The employee's password is "<< p<< endl;
 	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
 	cin>> yn;
 	if (yn == 0){
 		cout<< "Enter the new employee password."<< endl;
-		cin>> Banker[id].PWD;
+		cin>> p;
+		Banker[id].setPWD(p);
 	}
-	cout<< "The client's date of birth is "<< Customer[id].dob<< endl;
-	cout<< "If this is ok enter 1. If not, enter 0."<< endl;
-	cin>> yn;
-	if (yn == 0){
-		cout<< "Enter the new employee DOB."<< endl;
-		cin>> Banker[id].dob;
-	}
+
 	
 }
   
@@ -223,25 +237,31 @@ string Decrypt(string usernameinput, string passinput)
 						return "Done";
 						break;
 					case 3:
-						choice = adm.controlMenu()
+						choice = adm.controlMenu();
+						while(choice !=5)
+						{
+						
+						switch(choice)
+						{
+						
 							case 1:
-									newClient(myCus[]);
+									newClient(myCus);
 								break;
 							case 2:
-									cout<<"What is the id for the customer you would like to edit?"<<endl;
-									cin >>custid;
-									editClient(cust[custid]);
+									editClient(myCus);
 								break;
 							case 3:
-									newBank(myBank[]);
+									newEmployee(myBank);
 								break;
 							case 4:
-									editBank(bank[bankid]);
+									editEmployee(myBank);
 								break;
 							case 5:
 								break;
 						return "Done";
 						break;
+						}
+			}
 				}
 			}
 	}

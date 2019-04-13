@@ -18,11 +18,9 @@ void Admin::print(){
 		<< "Access Type"<< access<< endl; 
 }
 
-
-
-void Admin::controlMenu()
+int Admin::controlMenu()
 {	
-	int choice;
+	int choice = 0;
 		cout<<"Admin Menu\n"
 		<<"1. Enter a new client\n"
 		<<"2. Modify an existing client\n"
@@ -31,6 +29,7 @@ void Admin::controlMenu()
 		<<"5. Exit\n"
 		<<"Enter your choice: ";
 		cin >>choice;
+		return choice;
 	
 }
 

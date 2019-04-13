@@ -9,7 +9,9 @@ class User{
 	public:
 		User();
 		void setUName(string);
+		string getUName();
 		void setPWD(string);
+		string getPWD();
 		void setName(string, string);
 		void setID(string);
 		/*access type set to ATM by default in .cpp file

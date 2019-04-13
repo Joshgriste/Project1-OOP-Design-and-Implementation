@@ -20,7 +20,7 @@ void Customer::setDOB(string d){
 void Customer::setAcctType(string a){
 	acct = a;
 }
-void Customer::print(string a){
+void Customer::print(){
  	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
 		<< "Username: "<< UName<< "\n"
