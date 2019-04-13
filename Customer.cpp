@@ -22,6 +22,10 @@ void Customer::setAcctType(string a){
 	acct = a;
 }
 
+double Customer::getBalance(){return balance;}
+string Customer::getDOB(){return dob;}
+string Customer::getAcctType(){return acct;}
+
 void Customer::print()
 {
  	cout<< "User Information\n"
@@ -60,6 +64,8 @@ void Customer::viewbal(){
 		 << balance
 		 << "\n";
 }
+
+
 void Customer::menu(){
 	int option;
 	while(option != 4){

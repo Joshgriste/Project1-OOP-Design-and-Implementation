@@ -28,6 +28,12 @@ void User::setAccess(string a){
   	access = a; 
 }
 
+string User::getName(){ return first + " " + last;}
+string User::getUName(){ return UName;}
+string User::getID(){return id;}
+string User::getPWD(){return PWD;}
+
+
 
 void User::print(){
 	cout<< "User Information\n"
