@@ -27,6 +27,24 @@ void User::setID(string i){
 void User::setAccess(string a){
   	access = a; 
 }
+string User::getFName(){
+	return first;
+}
+string User::getLName(){
+	return last;
+}
+string User::getID(){
+	return id;
+}
+string User::getUName(){
+	return UName;
+}
+string User::getPWD(){
+	return PWD;
+}
+string User::getAccess(){
+	return access;
+}
 void User::print(){
 	cout<< "User Information\n"
 		<< "Full Name: "<< first<< " "<< last<< "\n"
