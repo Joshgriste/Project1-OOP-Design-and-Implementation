@@ -32,8 +32,8 @@ void toCustomerBalanceLog(string first, string last, string balance)
 	string contents, word, filename;
 	fstream file;
 	filename = "CustomerBalanceLog.txt";
-	file.open(filename.cstr());
-	wihle (file >> word)
+	file.open(filename.c_str());
+	while (file >> word)
 	{
 		contents = contents + "\n" + word;
 	}
@@ -43,10 +43,10 @@ void toCustomerBalanceLog(string first, string last, string balance)
 	CustomerBalanceLog << toLog;
 	CustomerBalanceLog.close();
 	
-	CustomerBalanceLog.open("CustomerBalanceLog.txt", iot_base::app);
+	CustomerBalanceLog.open("CustomerBalanceLog.txt", ios_base::app);
 	CustomerBalanceLog << contents << "\n";
 
-	CustomerLog.close();
+	CustomerBalanceLog.close();
 }
 
 //function that will take username, password, and authlevel and add to log file
